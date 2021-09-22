@@ -10,7 +10,7 @@ const userController = require('../controllers/user.controller');
 passport.use(new kakaoStrategy({
     clientID: process.env.KAKAO_REST_API_KEY,
     clientSecret: process.env.KAKAO_CLIENT_SECRET,
-    callbackURL: `${process.env.BASEURL}/user/auth/kakao/oauth`,
+    callbackURL: `${process.env.BASEURL}${process.env.API_PREFIX}/user/auth/kakao/oauth`,
     passReqToCallback: true
   },
   (request, accessToken, refreshToken, profile, done) => {
@@ -26,7 +26,7 @@ passport.use(new kakaoStrategy({
 passport.use(new googleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: `${process.env.BASEURL}/user/auth/google/oauth`,
+    callbackURL: `${process.env.BASEURL}${process.env.API_PREFIX}/user/auth/google/oauth`,
     passReqToCallback: true
   },
   (request, accessToken, refreshToken, profile, done) => {
