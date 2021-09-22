@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const accessMiddleware = require('../../middlewares/access.middleware');
 const userController = require('../../controllers/user.controller');
-const auth = require('./user-auth.route');
+const auth = require('./auth/index.route');
 
 router.use('/auth', auth);
 router.post('/logout', accessMiddleware, userController.logOut);
