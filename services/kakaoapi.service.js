@@ -3,7 +3,7 @@ const KAKAO_BASEURL = 'https://kapi.kakao.com/v2';
 const KAUTH_BASEURL = 'https://kauth.kakao.com';
 
 const requestKakaoApi = async (accessToken, endPoint, params = {}) => {
-  let axiosConfig = {
+  const axiosConfig = {
     headers: {
       Authorization: `Bearer ${accessToken}`,
       ContentType: 'application/x-www-form-urlencoded;charset=utf-8'
