@@ -49,6 +49,7 @@ const logOut = async (req, res, next) => {
     await userService.findByIdAndUpdate(req.user.userId, {
       jwt_key: ''
     });
+    req.logout();
     res.api({});
   }
   catch (err) {

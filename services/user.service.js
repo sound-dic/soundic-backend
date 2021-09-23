@@ -19,15 +19,15 @@ const signIn = async (record) => {
     new: true,
     upsert: true
   });
-}
+};
 
 const findById = async (userId) => {
   return await User.findById(userId);
-}
+};
 
 const findByIdAndUpdate = async (userId, obj) => {
   return await User.findByIdAndUpdate(userId, obj);
-}
+};
 
 const parseUserProfile = (user) => {
   return {
@@ -35,11 +35,16 @@ const parseUserProfile = (user) => {
     nickName: user.nickname,
     rank: user.rank
   };
-}
+};
+
+const find = async (query) => {
+  return await User.find(query);
+};
 
 module.exports = {
   signIn,
   findById,
   findByIdAndUpdate,
-  parseUserProfile
+  parseUserProfile,
+  find
 };

@@ -8,6 +8,7 @@ const app = require("../server");
 const debug = require("debug")("sound-dic:server");
 const http = require("http");
 const db = require("../db");
+const beginUserScheduler = require("../schedulers/user.scheduler");
 
 /**
  * Get port from environment and store in Express.
@@ -49,6 +50,12 @@ function normalizePort(val) {
 
   return false;
 }
+
+/**
+ * Scheduler
+ */
+
+ beginUserScheduler();
 
 /**
  * Event listener for HTTP server "error" event.

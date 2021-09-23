@@ -7,4 +7,9 @@ const ERROR = {
   UNKNOWN_ERROR: "서버 내부에 오류가 발생했습니다."
 };
 
-module.exports = { ERROR };
+const REDIRECT_URI = {
+  KAKAO: `${process.env.BASEURL}${process.env.API_PREFIX}/user/auth/kakao/oauth`,
+  GOOGLE: `${process.env.BASEURL}${process.env.API_PREFIX}/user/auth/google/oauth`
+};
+
+module.exports = { ERROR, REDIRECT_URI };

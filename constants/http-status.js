@@ -6,6 +6,6 @@ const HTTP_STATUS = {
   NOT_FOUND: 404,
   INTERNAL_ERROR: 500,
   SERVICE_UNAVAILABLE: 503
-}
+};
 
 module.exports = HTTP_STATUS;

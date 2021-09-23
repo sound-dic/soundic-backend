@@ -7,8 +7,6 @@ router.get('/', function(req, res, next) {
   res.send(`<a href=${process.env.API_PREFIX}/user/auth/kakao>카카오로그인</a><br/><a href=${process.env.API_PREFIX}/user/auth/google>구글로그인</a>`);
 });
 
-console.log(process.env.API_PREFIX);
-
 router.use(`${process.env.API_PREFIX}/user`, user);
 
 module.exports = router;
