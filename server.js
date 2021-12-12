@@ -6,7 +6,9 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const routers = require("./routes/index");
+const passport = require("passport");
+const routers = require("./routes/index.route");
+const expressOverride = require("./utils/express-overrides");
 
 const app = express();
 
@@ -15,6 +17,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(passport.initialize());
+app.use(expressOverride());
 app.use(routers);
 
 app.use(function (req, res, next) {
